@@ -75,7 +75,7 @@ SVG-спрайт хранится внутри `index.html`.
 
 ## 🖼️ Пример страницы
 
-> `![Preview](assets/img/screenshot.png)`
+![Preview](assets/img/screenshot.png)
 
 ---
 
