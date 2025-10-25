@@ -916,204 +916,181 @@
 					</h2>
 					<div id="collapseAndroid" class="accordion-collapse collapse" data-bs-parent="#accordionOs">
 						<div class="accordion-body m-0 p-0 pb-2">
-							<div class="accordion" id="accordionOsAndroid">
-								<div class="accordion-item">
-									<hr class="m-0">
-									<h2 class="accordion-header">
-										<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#accordionOsAndroidHiddify" aria-expanded="false" aria-controls="accordionOsAndroidHiddify">
-											<svg class="my-icon-small"><use href="#hiddify"></use></svg>
-											<span class="d-block w-100 text-center">
-												Hiddify🔥
-											</span>
-										</button>
-									</h2>
-									<div id="accordionOsAndroidHiddify" class="accordion-collapse collapse show" data-bs-parent="#accordionOsAndroid">
-										<div class="container pb-4">
-											<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
-											<p x-text="$t('getAppDescription')"></p>
-											<a href="https://play.google.com/store/apps/details?id=app.hiddify.com" target="_blank" rel="noopener noreferrer">
-												<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
-											</a>
-											<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
-											<p x-text="$t('addConfigDescription')"></p>
-											<a id="href-android-hiddify">
-												<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
-											</a>
-											<p class="fs-5 fw-bold mt-4">3. <span x-text="$t('doRun')"></span></p>
-											<p x-text="$t('hiddifyAdditional1')"></p>
-											<p x-text="$t('hiddifyAdditional2')"></p>
-											<p x-text="$t('hiddifyAdditional3')"></p>
-										</div>
-									</div>
+						  <div class="accordion" id="accordionOsAndroid">
+
+							<!-- 1) ОСНОВНОЕ ПРИЛОЖЕНИЕ: v2RayTun -->
+							<div class="accordion-item">
+							  <hr class="m-0">
+							  <h2 class="accordion-header">
+								<button class="accordion-button collapsed fs-5 fw-bold" type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#accordionOsAndroidV2raytun"
+										aria-expanded="false"
+										aria-controls="accordionOsAndroidV2raytun">
+								  <svg class="my-icon-small"><use href="#v2raytun"></use></svg>
+								  <span class="d-block w-100 text-center">
+									V2RayTun
+								  </span>
+								</button>
+							  </h2>
+							  <!-- по умолчанию открыт -->
+							  <div id="accordionOsAndroidV2raytun" class="accordion-collapse collapse show" data-bs-parent="#accordionOsAndroid">
+								<div class="container pb-4">
+								  <p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
+								  <p x-text="$t('getAppDescription')"></p>
+								  <a href="https://play.google.com/store/apps/details?id=com.v2raytun.android" target="_blank" rel="noopener noreferrer">
+									<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
+								  </a>
+
+								  <p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
+								  <p x-text="$t('addConfigDescription')"></p>
+								  <a id="href-android-v2raytun">
+									<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
+								  </a>
+
 								</div>
-								<hr class="m-0">
-								<div class="accordion-item">
-									<h2 class="accordion-header">
-										<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#accordionOsAndroidAlt" aria-expanded="false" aria-controls="accordionOsAndroidAlt">
-											<i class="bi bi-plus-circle-fill mb-2"></i>
-											<span class="d-block w-100 text-center" x-text="$t('otherApps')"></span>
-										</button>
-									</h2>
-									<div id="accordionOsAndroidAlt" class="accordion-collapse collapse" data-bs-parent="#accordionOsAndroid">
-										<p x-text="$t('selectApp')"></p>
-										<div class="accordion mt-2" id="accordionOsAndroidAltList">
-											<!--
-											<div class="accordion-item">
-												<h2 class="accordion-header">
-													<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#accordionOsAndroidV2rayng" aria-expanded="false" aria-controls="accordionOsAndroidV2rayng">
-														<svg class="my-icon-small"><use href="#v2rayng"></use></svg>
-														<span class="d-block w-100 text-center">
-															V2RayNG
-														</span>
-													</button>
-												</h2>
-												<div id="accordionOsAndroidV2rayng" class="accordion-collapse collapse" data-bs-parent="#accordionOsAndroidAltList">
-													<div class="container pb-4">
-														<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
-														<p x-text="$t('getAppDescription')"></p>
-														<a href="https://play.google.com/store/apps/details?id=com.v2ray.ang">
-															<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
-														</a>
-														<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
-														<p x-text="$t('addConfigDescription')"></p>
-														<a id="href-android-v2rayng">
-															<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
-														</a>
-														<p class="fs-5 fw-bold mt-4">3. <span x-text="$t('doUpdate')"></span></p>
-														<p x-text="$t('v2rayNgUpdateSub')"></p>
-														<div class="row align-items-center">
-															<div class="col">
-																<img id="imgV2rayNg1" src="" width="100%" class="rounded img-fluid">
-															</div>
-															<div class="col">
-																<img id="imgV2rayNg2"src="" width="100%" class="rounded img-fluid">
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<hr class="m-0">
-											-->
-											<div class="accordion-item">
-												<h2 class="accordion-header">
-												<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOsAndroidV2raytun" aria-expanded="false" aria-controls="collapseOsAndroidV2raytun">
-														<svg class="my-icon-small"><use href="#v2rayng"></use></svg>
-														<span class="d-block w-100 text-center">
-															V2RayTun
-														</span>
-													</button>
-												</h2>
-												<div id="collapseOsAndroidV2raytun" class="accordion-collapse collapse" data-bs-parent="#accordionOsAndroidAltList">
-													<div class="container pb-4">
-														<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
-														<p x-text="$t('getAppDescription')"></p>
-														<a href="https://play.google.com/store/apps/details?id=com.v2raytun.android" target="_blank" rel="noopener noreferrer">
-															<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
-														</a>
-														<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
-														<p x-text="$t('addConfigDescription')"></p>
-														<a id="href-android-v2raytun">
-															<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
-														</a>
-													</div>
-												</div>
-											</div>
-											<hr class="m-0">
-											<!--
-											<div class="accordion-item">
-												<h2 class="accordion-header">
-													<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#accordionOsAndroidCMFA" aria-expanded="false" aria-controls="accordionOsAndroidCMFA">
-														<svg class="my-icon"><use href="#clash-meta"></use></svg>
-														<span class="d-block w-100 text-center">
-															Clash Meta
-														</span>
-													</button>
-												</h2>
-												<div id="accordionOsAndroidCMFA" class="accordion-collapse collapse" data-bs-parent="#accordionOsAndroidAltList">
-													<div class="container pb-4">
-														<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
-														<p x-text="$t('getAppDescription')"></p>
-														<a id="cmfa" href="#">
-															<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
-														</a>
-														<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
-														<p x-text="$t('CMFAaddconfig')"></p>
-														<a id="href-android-cmfa">
-															<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
-														</a>
-														<p class="fs-5 fw-bold mt-4">3. <span x-text="$t('doRun')"></span></p>
-														<p x-text="$t('CMFArunconfig')"></p>
-													</div>
-												</div>
-											</div>
-											<hr class="m-0">
-											-->
-											<div class="accordion-item">
-												<h2 class="accordion-header">
-												<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOsAndroidSingbox" aria-expanded="false" aria-controls="collapseOsAndroidSingbox">
-														<svg class="my-icon"><use href="#singbox"></use></svg>
-														<span class="d-block w-100 text-center">
-															SingBox
-														</span>
-													</button>
-												</h2>
-												<div id="collapseOsAndroidSingbox" class="accordion-collapse collapse" data-bs-parent="#accordionOsAndroidAltList">
-													<div class="container pb-4">
-														<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
-														<p x-text="$t('getAppDescription')"></p>
-														<a href="https://play.google.com/store/apps/details?id=io.nekohasekai.sfa" target="_blank" rel="noopener noreferrer">
-															<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
-														</a>
-														<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
-														<p x-text="$t('addConfigDescription')"></p>
-														<a id="href-android-singbox">
-															<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
-														</a>
-													</div>
-												</div>
-											</div>
-											<hr class="m-0">
-											<div class="accordion-item">
-												<h2 class="accordion-header">
-													<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOsAndroidHapp" aria-expanded="false" aria-controls="collapseOsAndroidHapp">
-														<svg class="my-icon"><use href="#happ"></use></svg>
-														<span class="d-block w-100 text-center">
-															Happ
-														</span>
-													</button>
-												</h2>
-												<div id="collapseOsAndroidHapp" class="accordion-collapse collapse" data-bs-parent="#accordionOsAndroidAltList">
-													<div class="container pb-4">
-														<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
-														<p x-text="$t('getAppDescription')"></p>
-														<a href="https://play.google.com/store/apps/details?id=com.happproxy" target="_blank" rel="noopener noreferrer">
-															<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
-														</a>
-														<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
-														<p x-text="$t('addConfigDescription')"></p>
-														<a id="href-android-happ">
-															<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
-														</a>
-														<p class="fs-5 fw-bold mt-4">3. <span x-text="$t('happRouting')"></span></p>
-														<p class="fs-5 fw-bold mt-4" x-text="$t('happRoutingRoscomVPN')"></p>
-														<p x-text="$t('addConfigDescription')"></p>
-														<a id="href-android-happ-RoscomVPN">
-															<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
-														</a><br>
-														<p class="fs-5 fw-bold mt-4" x-text="$t('happRoutingReFilter')"></p>
-														<p x-text="$t('addConfigDescription')"></p>
-														<a id="href-android-happ-ReFilter">
-															<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+							  </div>
 							</div>
+
+							<hr class="m-0">
+
+							<!-- 2) ДРУГИЕ ПРИЛОЖЕНИЯ (сюда переносим Hiddify) -->
+							<div class="accordion-item">
+							  <h2 class="accordion-header">
+								<button class="accordion-button collapsed fs-5 fw-bold" type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#accordionOsAndroidAlt"
+										aria-expanded="false"
+										aria-controls="accordionOsAndroidAlt">
+								  <i class="bi bi-plus-circle-fill mb-2"></i>
+								  <span class="d-block w-100 text-center" x-text="$t('otherApps')"></span>
+								</button>
+							  </h2>
+							  <div id="accordionOsAndroidAlt" class="accordion-collapse collapse" data-bs-parent="#accordionOsAndroid">
+								<p x-text="$t('selectApp')"></p>
+
+								<div class="accordion mt-2" id="accordionOsAndroidAltList">
+
+								  <!-- Hiddify — перенесён сюда -->
+								  <div class="accordion-item">
+									<h2 class="accordion-header">
+									  <button class="accordion-button collapsed fs-5 fw-bold" type="button"
+											  data-bs-toggle="collapse"
+											  data-bs-target="#collapseOsAndroidHiddify"
+											  aria-expanded="false"
+											  aria-controls="collapseOsAndroidHiddify">
+										<svg class="my-icon-small"><use href="#hiddify"></use></svg>
+										<span class="d-block w-100 text-center">
+										  Hiddify🔥
+										</span>
+									  </button>
+									</h2>
+									<div id="collapseOsAndroidHiddify" class="accordion-collapse collapse" data-bs-parent="#accordionOsAndroidAltList">
+									  <div class="container pb-4">
+										<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
+										<p x-text="$t('getAppDescription')"></p>
+										<a href="https://play.google.com/store/apps/details?id=app.hiddify.com" target="_blank" rel="noopener noreferrer">
+										  <button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
+										</a>
+										<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
+										<p x-text="$t('addConfigDescription')"></p>
+										<a id="href-android-hiddify">
+										  <button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
+										</a>
+										<p class="fs-5 fw-bold mt-4">3. <span x-text="$t('doRun')"></span></p>
+										<p x-text="$t('hiddifyAdditional1')"></p>
+										<p x-text="$t('hiddifyAdditional2')"></p>
+										<p x-text="$t('hiddifyAdditional3')"></p>
+									  </div>
+									</div>
+								  </div>
+
+								  <hr class="m-0">
+
+								  <!-- SingBox (без изменений) -->
+								  <div class="accordion-item">
+									<h2 class="accordion-header">
+									  <button class="accordion-button collapsed fs-5 fw-bold" type="button"
+											  data-bs-toggle="collapse"
+											  data-bs-target="#collapseOsAndroidSingbox"
+											  aria-expanded="false"
+											  aria-controls="collapseOsAndroidSingbox">
+										<svg class="my-icon"><use href="#singbox"></use></svg>
+										<span class="d-block w-100 text-center">
+										  SingBox
+										</span>
+									  </button>
+									</h2>
+									<div id="collapseOsAndroidSingbox" class="accordion-collapse collapse" data-bs-parent="#accordionOsAndroidAltList">
+									  <div class="container pb-4">
+										<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
+										<p x-text="$t('getAppDescription')"></p>
+										<a href="https://play.google.com/store/apps/details?id=io.nekohasekai.sfa" target="_blank" rel="noopener noreferrer">
+										  <button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
+										</a>
+										<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
+										<p x-text="$t('addConfigDescription')"></p>
+										<a id="href-android-singbox">
+										  <button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
+										</a>
+									  </div>
+									</div>
+								  </div>
+
+								  <hr class="m-0">
+
+								  <!-- Happ (без изменений) -->
+								  <div class="accordion-item">
+									<h2 class="accordion-header">
+									  <button class="accordion-button collapsed fs-5 fw-bold" type="button"
+											  data-bs-toggle="collapse"
+											  data-bs-target="#collapseOsAndroidHapp"
+											  aria-expanded="false"
+											  aria-controls="collapseOsAndroidHapp">
+										<svg class="my-icon"><use href="#happ"></use></svg>
+										<span class="d-block w-100 text-center">
+										  Happ
+										</span>
+									  </button>
+									</h2>
+									<div id="collapseOsAndroidHapp" class="accordion-collapse collapse" data-bs-parent="#accordionOsAndroidAltList">
+									  <div class="container pb-4">
+										<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
+										<p x-text="$t('getAppDescription')"></p>
+										<a href="https://play.google.com/store/apps/details?id=com.happproxy" target="_blank" rel="noopener noreferrer">
+										  <button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
+										</a>
+										<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
+										<p x-text="$t('addConfigDescription')"></p>
+										<a id="href-android-happ">
+										  <button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
+										</a>
+
+										<p class="fs-5 fw-bold mt-4">3. <span x-text="$t('happRouting')"></span></p>
+										<p class="fs-5 fw-bold mt-4" x-text="$t('happRoutingRoscomVPN')"></p>
+										<p x-text="$t('addConfigDescription')"></p>
+										<a id="href-android-happ-RoscomVPN">
+										  <button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
+										</a><br>
+										<p class="fs-5 fw-bold mt-4" x-text="$t('happRoutingReFilter')"></p>
+										<p x-text="$t('addConfigDescription')"></p>
+										<a id="href-android-happ-ReFilter">
+										  <button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
+										</a>
+									  </div>
+									</div>
+								  </div>
+
+								  <!-- (если у тебя были V2rayNG/Clash Meta в комментариях — можешь оставить как есть) -->
+
+								</div> <!-- /accordionOsAndroidAltList -->
+							  </div>   <!-- /accordionOsAndroidAlt -->
+							</div>     <!-- /accordion-item: другие приложения -->
+
+						  </div>
 						</div>
-					</div>
+					  </div>
+				  </div>
 				</div>
 				<div class="accordion-item rounded-4 px-3 mb-2">
 					<h2 class="accordion-header">
@@ -1138,42 +1115,51 @@
 									  aria-controls="accordionOsWindowsV2RayTun">
 								<svg class="my-icon-small"><use href="#v2rayng"></use></svg>
 								<span class="d-block w-100 text-center">
-								  v2RayTun (Windows) — <span x-text="$t('recommended') ?? 'рекомендуется'"></span>
+								  v2RayTun
 								</span>
 							  </button>
 							</h2>
 							<!-- по умолчанию открыто: show -->
 							<div id="accordionOsWindowsV2RayTun" class="accordion-collapse collapse show" data-bs-parent="#accordionOsWindows">
 								<div class="container pb-4">
-								  <p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
-								  <p x-text="$t('getAppDescription')"></p>
-								  <a href="https://v2raytun.com" target="_blank" rel="noopener">
+									<!-- 1. Скачать -->
+									<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
+									<p x-text="$t('getAppDescription')"></p>
+
+									<!-- Прямой .exe -->
+									<a href="https://storage.v2raytun.com/v2RayTun_Setup.exe" target="_blank" rel="noopener">
 									<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
-								  </a>
-							  
-								  <p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
-								  <p x-text="$t('addConfigDescription')"></p>
-								  <div class="d-grid gap-2 mb-2">
-									<a id="href-windows-v2raytun">
-									  <button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
 									</a>
-									<button class="btn my-btn my-btn-outline w-100 text-break btn-copy-sub-link" type="button">
-									  <script type="text/javascript">document.write(linkFull);</script>
+
+									<!-- (необязательно) запасная кнопка на лендинг, если прямой URL когда-нибудь изменится -->
+									<a href="https://v2raytun.com" target="_blank" rel="noopener" class="mt-2 d-block">
+									<button type="button" class="btn my-btn my-btn-outline w-100">
+										Открыть страницу загрузки v2RayTun
 									</button>
-								  </div>
-								  <p class="small text-muted" x-text="$t('v2raytunHint1')"></p>
-							  
-								  <p class="fs-5 fw-bold mt-4">3. <span x-text="$t('doRun')"></span></p>
-								  <p x-text="$t('v2raytunHint2')"></p>
-							  
-								  <p class="fs-5 fw-bold mt-4">4. VPN-mode (TUN)</p>
-								  <p x-text="$t('v2raytunTun1')"></p>
-								  <p x-text="$t('v2raytunTun2')"></p>
-							  
-								  <div class="my-warning mt-2">
-									<p x-text="$t('troubleWin1')"></p>
-									<p x-text="$t('troubleWin2')"></p>
-								  </div>
+									</a>							  
+									<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
+									<p x-text="$t('addConfigDescription')"></p>
+									<div class="d-grid gap-2 mb-2">
+										<a id="href-windows-v2raytun">
+										<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
+										</a>
+										<button class="btn my-btn my-btn-outline w-100 text-break btn-copy-sub-link" type="button">
+										<script type="text/javascript">document.write(linkFull);</script>
+										</button>
+									</div>
+									<p class="small text-muted" x-text="$t('v2raytunHint1')"></p>
+								
+									<p class="fs-5 fw-bold mt-4">3. <span x-text="$t('doRun')"></span></p>
+									<p x-text="$t('v2raytunHint2')"></p>
+								
+									<p class="fs-5 fw-bold mt-4">4. VPN-mode (TUN)</p>
+									<p x-text="$t('v2raytunTun1')"></p>
+									<p x-text="$t('v2raytunTun2')"></p>
+								
+									<div class="my-warning mt-2">
+										<p x-text="$t('troubleWin1')"></p>
+										<p x-text="$t('troubleWin2')"></p>
+									</div>
 								</div>
 							  </div>						  
 							</div>
@@ -1813,7 +1799,7 @@
 					v2raytunHint2: "После импорта выберите сервер и нажмите Connect.",
 					v2raytunTun1: "Включите режим TUN/VPN в настройках, чтобы весь трафик шёл через приложение.",
 					v2raytunTun2: "Если какие-то приложения обходят туннель, проверьте маршрутизацию по приложениям и правила брандмауэра Windows.",					
-					
+
 					//Footer
 					faq: 'Ответы на вопросы:',
 					faq1: '1. Подписка — ссылка в специальном формате, по которой приложение загружает с сервера данные, необходимые для подключения',
