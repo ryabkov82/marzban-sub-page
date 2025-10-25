@@ -128,6 +128,9 @@
 				//document.getElementById("href-android-happ").href = `happ://add/${linkFull}`;
 				setupLink("href-android-happ", `happ://add/${linkFull}`);
 				
+				// v2RayTun (Windows) — основной клиент
+				setupLink("href-windows-v2raytun", `v2raytun://import/${linkFull}#` + serviceName);
+				
 				//document.getElementById("href-windows-hiddify").href = `hiddify://import/${linkFull}`;
 				setupLink("href-windows-hiddify", `hiddify://import/${linkFull}`);
 				
@@ -1123,237 +1126,321 @@
 					</h2>
 					<div id="collapseWindows" class="accordion-collapse collapse" data-bs-parent="#accordionOs">
 						<div class="accordion" id="accordionOsWindows">
-							<div class="accordion-item">
-								<hr class="m-0">
-								<h2 class="accordion-header">
-									<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#accordionOsWindowsHiddify" aria-expanded="false" aria-controls="accordionOsWindowsHiddify">
-										<svg class="my-icon-small"><use href="#hiddify"></use></svg>
-										<span class="d-block w-100 text-center">
-											Hiddify🔥
-										</span>
-									</button>
-								</h2>
-								<div id="accordionOsWindowsHiddify" class="accordion-collapse collapse show" data-bs-parent="#accordionOsWindows">
-									<div class="container pb-4">
-										<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
-										<p x-text="$t('getAppDescription')"></p>
-										<a href="https://github.com/hiddify/hiddify-next/releases/latest/download/Hiddify-Windows-Setup-x64.exe">
-											<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
-										</a>
-										<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
-										<p x-text="$t('addConfigDescription')"></p>
-										<a id="href-windows-hiddify">
-											<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
-										</a>
-										<p class="fs-5 fw-bold mt-4">3. <span x-text="$t('doRun')"></span></p>
-										<p x-text="$t('hiddifyAdditional1')"></p>
-										<p x-text="$t('hiddifyAdditional2')"></p>
-										<p x-text="$t('hiddifyAdditional3')"></p>
-										<div class="my-warning">
-											<p x-text="$t('troubleWin1')"></p>
-											<p x-text="$t('troubleWin2')"></p>
-										</div>
-										<p class="fs-5 fw-bold mt-4">4. VPN-mode:</p>
-										<p x-text="$t('hiddifyTun1')"></p>
-										<p x-text="$t('hiddifyTun2')"></p>
-									</div>
-								</div>
-							</div>
+  
+						  <!-- 1) ОСНОВНОЕ ПРИЛОЖЕНИЕ: v2RayTun -->
+						  <div class="accordion-item">
 							<hr class="m-0">
-							<div class="accordion-item">
-								<h2 class="accordion-header">
-									<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#accordionOsWindowsAlt" aria-expanded="false" aria-controls="accordionOsWindowsAlt">
-										<i class="bi bi-plus-circle-fill mb-2"></i>
-										<span class="d-block w-100 text-center" x-text="$t('otherApps')"></span>
+							<h2 class="accordion-header">
+							  <button class="accordion-button collapsed fs-5 fw-bold" type="button"
+									  data-bs-toggle="collapse"
+									  data-bs-target="#accordionOsWindowsV2RayTun"
+									  aria-expanded="false"
+									  aria-controls="accordionOsWindowsV2RayTun">
+								<svg class="my-icon-small"><use href="#v2rayng"></use></svg>
+								<span class="d-block w-100 text-center">
+								  v2RayTun (Windows) — <span x-text="$t('recommended') ?? 'рекомендуется'"></span>
+								</span>
+							  </button>
+							</h2>
+							<!-- по умолчанию открыто: show -->
+							<div id="accordionOsWindowsV2RayTun" class="accordion-collapse collapse show" data-bs-parent="#accordionOsWindows">
+								<div class="container pb-4">
+								  <p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
+								  <p x-text="$t('getAppDescription')"></p>
+								  <a href="https://v2raytun.com" target="_blank" rel="noopener">
+									<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
+								  </a>
+							  
+								  <p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
+								  <p x-text="$t('addConfigDescription')"></p>
+								  <div class="d-grid gap-2 mb-2">
+									<a id="href-windows-v2raytun">
+									  <button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
+									</a>
+									<button class="btn my-btn my-btn-outline w-100 text-break btn-copy-sub-link" type="button">
+									  <script type="text/javascript">document.write(linkFull);</script>
 									</button>
-								</h2>
-								<div id="accordionOsWindowsAlt" class="accordion-collapse collapse" data-bs-parent="#accordionOsWindows">
-									<p x-text="$t('selectApp')"></p>
-									<div class="accordion mt-2" id="accordionOsWindowsAltList">
-										<div class="accordion-item">
-											<h2 class="accordion-header">
-												<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOsWindowsNekoray" aria-expanded="false" aria-controls="collapseOsWindowsNekoray">
-													<svg class="my-icon"><use href="#nekoray"></use></svg>
-													<span class="d-block w-100 text-center">
-														NekoRay
-													</span>
-												</button>
-											</h2>
-											<div id="collapseOsWindowsNekoray" class="accordion-collapse collapse" data-bs-parent="#accordionOsWindowsAltList">
-												<div class="container pb-4">
-													<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
-													<p x-text="$t('getAppDescription')"></p>
-													<a href="https://github.com/MatsuriDayo/nekoray/releases/download/4.0.1/nekoray-4.0.1-2024-12-12-windows64.zip">
-														<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
-													</a>
-													<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('unpack')"></span></p>
-													<p x-text="$t('anyPlace')"></p>
-													<p class="fs-5 fw-bold mt-4">3. <span x-text="$t('runFile')"></span> nekobox.exe</p>
-													<p x-text="$t('betterAdmin')"></p>
-													<p class="fs-5 fw-bold mt-4">4. <span x-text="$t('addConfig')"></span></p>
-													<p x-text="$t('copyLinkBelow')"></p>
-													<button class="btn my-btn my-btn-accent w-100 text-break mb-4 btn-copy-sub-link" type="button">
-														<script type="text/javascript">
-															document.write(linkFull);
-														</script>
-													</button>
-													<p x-text="$t('openAndPaste')"></p>
-													<p class="fs-5 fw-bold mt-4">5. <span x-text="$t('tunWish')"></span></p>
-													<p x-text="$t('nekorayTun')"></p>
-													<a href="https://blancvpn.online/ru/help/NekoRay-windows-split-tunneling">
-														<button type="button" class="btn my-btn my-btn-accent w-100 mt-2 mb-4" x-text="$t('nekoraySplit1')"></button>
-													</a>
-													<p x-text="$t('nekoraySplit2')"></p>
-													<p x-text="$t('nekoraySplit3')"></p>
-													<div class="card p-3 pb-1 border border-0 rounded-4 mb-3">
-													<code>
-														<p>{"rules": [{"outbound": "proxy","process_name": </p>
-														<p>[ "Discord.exe", "Update.exe", "chrome.exe", "firefox.exe", "msedge.exe", "opera.exe", "browser.exe", "yandexbrowser.exe", "brave.exe", "vivaldi.exe", "librewolf.exe" ] </p>
-														<p>}]}</p>
-													</code>
-													</div>
-													<p x-text="$t('nekoraySplit4')"></p>
-													<p x-text="$t('nekoraySplit5')"></p>
-													<p class="fs-5 fw-bold mt-4">6. <span x-text="$t('doRun')"></span></p>
-													<p x-text="$t('nekorayRun1')"></p>
-													<p x-text="$t('nekorayRun2')"></p>
-													<p x-text="$t('nekorayRun3')"></p>
-													<div class="my-warning">
-														<p x-text="$t('troubleWin1')"></p>
-														<p x-text="$t('troubleWin2')"></p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<hr class="m-0">
-										<div class="accordion-item">
-											<h2 class="accordion-header">
-												<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOsWindowsV2rayN" aria-expanded="false" aria-controls="collapseOsWindowsV2rayN">
-													<svg class="my-icon-small"><use href="#v2rayng"></use></svg>
-													<span class="d-block w-100 text-center">
-														v2rayN
-													</span>
-												</button>
-											</h2>
-											<div id="collapseOsWindowsV2rayN" class="accordion-collapse collapse" data-bs-parent="#accordionOsWindowsAltList">
-												<div class="container pb-4">
-													<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
-													<p x-text="$t('getAppDescription')"></p>
-													<a href="https://github.com/2dust/v2rayN/releases/download/7.4.2/v2rayN-windows-64-SelfContained-With-Core.7z">
-														<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
-													</a>
-													<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('unpack')"></span></p>
-													<p x-text="$t('anyPlace')"></p>
-													<p class="fs-5 fw-bold mt-4">3. <span x-text="$t('runFile')"></span> v2rayN.exe</p>
-													<p x-text="$t('betterAdmin')"></p>
-													<p class="fs-5 fw-bold mt-4">4. <span x-text="$t('addConfig')"></span></p>
-													<p x-text="$t('copyLinkBelow')"></p>
-													<button class="btn my-btn my-btn-accent w-100 text-break mb-4 btn-copy-sub-link" type="button">
-														<script type="text/javascript">
-															document.write(linkFull);
-														</script>
-													</button>
-													<p x-text="$t('openAndPaste')"></p>
-													<p class="fs-5 fw-bold mt-4">5. <span x-text="$t('doUpdate')"></span></p>
-													<p x-text="$t('v2rayNupdateSub')"></p>
-													<p class="fs-5 fw-bold mt-4">6. <span x-text="$t('tunWish')"></span></p>
-													<p x-text="$t('v2rayNtun1')"/></p>
-													<p x-text="$t('v2rayNtun2')"/></p>
-													<p x-text="$t('v2rayNtun3')"/></p>
-													<p class="fs-5 fw-bold mt-4">7. <span x-text="$t('doRun')"></span></p>
-													<p x-text="$t('v2rayNrun1')"></p>
-													<p x-text="$t('v2rayNrun2')"></p>
-													<a href="https://habr.com/en/articles/853796/">
-														<button type="button" class="btn my-btn my-btn-accent w-100 mt-2 mb-4" x-text="$t('v2rayNabout')"></button>
-													</a>
-													<div class="my-warning">
-														<p x-text="$t('troubleWin1')"></p>
-														<p x-text="$t('troubleWin2')"></p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<hr class="m-0">
-										<div class="accordion-item">
-											<h2 class="accordion-header">
-												<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOsWindowsInvisibleman" aria-expanded="false" aria-controls="collapseOsWindowsInvisibleman">
-													<svg class="my-icon"><use href="#invisibleman"></use></svg>
-													<span class="d-block w-100 text-center">
-														InvisibleMan
-													</span>
-												</button>
-											</h2>
-											<div id="collapseOsWindowsInvisibleman" class="accordion-collapse collapse" data-bs-parent="#accordionOsWindowsAltList">
-												<div class="container pb-4">
-													<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
-													<p x-text="$t('getAppDescription')"></p>
-													<a href="https://github.com/InvisibleManVPN/InvisibleMan-XRayClient/releases/latest/download/InvisibleManXRay-x64.zip">
-														<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
-													</a>
-													<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('unpack')"></span></p>
-													<p x-text="$t('anyPlace')"></p>
-													<p class="fs-5 fw-bold mt-4">3. <span x-text="$t('runFile')"></span> Invisible Man XRay.exe</p>
-													<p x-text="$t('betterAdmin')"></p>
-													<p class="fs-5 fw-bold mt-4">4. <span x-text="$t('addConfig')"></span></p>
-													<p x-text="$t('addConfigDescription')"></p>
-													<a id="href-windows-invisibleman">
-														<button type="button" class="btn my-btn my-btn-accent w-100 mb-4" x-text="$t('addConfigApp')"></button>
-													</a>
-													<p x-text="$t('invManAddConf1')"></p>
-													<p x-text="$t('invManAddConf2')"></p>
-													<p class="fs-5 fw-bold mt-4">5. <span x-text="$t('doRun')"></span></p>
-													<p x-text="$t('invManRun')"></p>
-													<p class="fs-5 fw-bold mt-4">6. <span x-text="$t('tunWish')"></span></p>
-													<p x-text="$t('invManTun')"></p>
-													<div class="my-warning">
-														<p x-text="$t('troubleWin1')"></p>
-														<p x-text="$t('troubleWin2')"></p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<hr class="m-0">
-										<div class="accordion-item">
-											<h2 class="accordion-header">
-												<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOsWindowsClashVergeRev" aria-expanded="false" aria-controls="collapseOsWindowsClashVergeRev">
-													<svg class="my-icon-small"><use href="#clash-verge-rev"></use></svg>
-													<span class="d-block w-100 text-center">
-														Clash Verge Rev
-													</span>
-												</button>
-											</h2>
-											<div id="collapseOsWindowsClashVergeRev" class="accordion-collapse collapse" data-bs-parent="#accordionOsWindowsAltList">
-												<div class="container pb-4">
-													<p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
-													<p x-text="$t('getAppDescription')"></p>
-													<a id="clashvergerev" href="#">
-														<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
-													</a>
-													<p class="fs-5 fw-bold mt-4">2. <span x-text="$t('doRun')"></span> Clash Verge Rev</p>
-													<p x-text="$t('betterAdmin')"></p>
-													<p class="fs-5 fw-bold mt-4">3. <span x-text="$t('addConfig')"></span></p>
-													<p x-text="$t('addConfigDescription')"></p>
-													<a id="href-windows-clashvergerev">
-														<button type="button" class="btn my-btn my-btn-accent w-100 mb-4" x-text="$t('addConfigApp')"></button>
-													</a>
-													<p x-text="$t('ClashVergeRevAddConf1')"></p>
-													<p x-text="$t('ClashVergeRevOnSysProxy')"></p>
-													<p class="fs-5 fw-bold mt-4">4. <span x-text="$t('tunWish')"></span></p>
-													<p x-text="$t('ClashVergeRevTun')"></p>
-													<p x-text="$t('ClashVergeRevOffSysProxy')"></p>
-													<div class="my-warning">
-														<p x-text="$t('troubleWin1')"></p>
-														<p x-text="$t('troubleWin2')"></p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+								  </div>
+								  <p class="small text-muted" x-text="$t('v2raytunHint1')"></p>
+							  
+								  <p class="fs-5 fw-bold mt-4">3. <span x-text="$t('doRun')"></span></p>
+								  <p x-text="$t('v2raytunHint2')"></p>
+							  
+								  <p class="fs-5 fw-bold mt-4">4. VPN-mode (TUN)</p>
+								  <p x-text="$t('v2raytunTun1')"></p>
+								  <p x-text="$t('v2raytunTun2')"></p>
+							  
+								  <div class="my-warning mt-2">
+									<p x-text="$t('troubleWin1')"></p>
+									<p x-text="$t('troubleWin2')"></p>
+								  </div>
 								</div>
+							  </div>						  
 							</div>
+  
+						  <hr class="m-0">
+  
+						  <!-- 2) ДРУГИЕ ПРИЛОЖЕНИЯ (сюда переезжает Hiddify) -->
+						  <div class="accordion-item">
+							<h2 class="accordion-header">
+							  <button class="accordion-button collapsed fs-5 fw-bold" type="button"
+									  data-bs-toggle="collapse"
+									  data-bs-target="#accordionOsWindowsAlt"
+									  aria-expanded="false"
+									  aria-controls="accordionOsWindowsAlt">
+								<i class="bi bi-plus-circle-fill mb-2"></i>
+								<span class="d-block w-100 text-center" x-text="$t('otherApps')"></span>
+							  </button>
+							</h2>
+  
+							<div id="accordionOsWindowsAlt" class="accordion-collapse collapse" data-bs-parent="#accordionOsWindows">
+							  <p x-text="$t('selectApp')"></p>
+  
+							  <div class="accordion mt-2" id="accordionOsWindowsAltList">
+  
+								<!-- Hiddify — ПЕРЕНЕСЁН СЮДА -->
+								<div class="accordion-item">
+								  <h2 class="accordion-header">
+									<button class="accordion-button collapsed fs-5 fw-bold" type="button"
+											data-bs-toggle="collapse"
+											data-bs-target="#collapseOsWindowsHiddify"
+											aria-expanded="false"
+											aria-controls="collapseOsWindowsHiddify">
+									  <svg class="my-icon-small"><use href="#hiddify"></use></svg>
+									  <span class="d-block w-100 text-center">
+										Hiddify🔥
+									  </span>
+									</button>
+								  </h2>
+								  <div id="collapseOsWindowsHiddify" class="accordion-collapse collapse" data-bs-parent="#accordionOsWindowsAltList">
+									<div class="container pb-4">
+									  <p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
+									  <p x-text="$t('getAppDescription')"></p>
+									  <a href="https://github.com/hiddify/hiddify-next/releases/latest/download/Hiddify-Windows-Setup-x64.exe">
+										<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
+									  </a>
+									  <p class="fs-5 fw-bold mt-4">2. <span x-text="$t('addConfig')"></span></p>
+									  <p x-text="$t('addConfigDescription')"></p>
+									  <a id="href-windows-hiddify">
+										<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('addConfigApp')"></button>
+									  </a>
+									  <p class="fs-5 fw-bold mt-4">3. <span x-text="$t('doRun')"></span></p>
+									  <p x-text="$t('hiddifyAdditional1')"></p>
+									  <p x-text="$t('hiddifyAdditional2')"></p>
+									  <p x-text="$t('hiddifyAdditional3')"></p>
+									  <div class="my-warning">
+										<p x-text="$t('troubleWin1')"></p>
+										<p x-text="$t('troubleWin2')"></p>
+									  </div>
+									  <p class="fs-5 fw-bold mt-4">4. VPN-mode:</p>
+									  <p x-text="$t('hiddifyTun1')"></p>
+									  <p x-text="$t('hiddifyTun2')"></p>
+									</div>
+								  </div>
+								</div>
+  
+								<hr class="m-0">
+  
+								<!-- NekoRay (без изменений) -->
+								<div class="accordion-item">
+								  <h2 class="accordion-header">
+									<button class="accordion-button collapsed fs-5 fw-bold" type="button"
+											data-bs-toggle="collapse"
+											data-bs-target="#collapseOsWindowsNekoray"
+											aria-expanded="false"
+											aria-controls="collapseOsWindowsNekoray">
+									  <svg class="my-icon"><use href="#nekoray"></use></svg>
+									  <span class="d-block w-100 text-center">NekoRay</span>
+									</button>
+								  </h2>
+								  <div id="collapseOsWindowsNekoray" class="accordion-collapse collapse" data-bs-parent="#accordionOsWindowsAltList">
+									<div class="container pb-4">
+									  <p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
+									  <p x-text="$t('getAppDescription')"></p>
+									  <a href="https://github.com/MatsuriDayo/nekoray/releases/download/4.0.1/nekoray-4.0.1-2024-12-12-windows64.zip">
+										<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
+									  </a>
+									  <p class="fs-5 fw-bold mt-4">2. <span x-text="$t('unpack')"></span></p>
+									  <p x-text="$t('anyPlace')"></p>
+									  <p class="fs-5 fw-bold mt-4">3. <span x-text="$t('runFile')"></span> nekobox.exe</p>
+									  <p x-text="$t('betterAdmin')"></p>
+									  <p class="fs-5 fw-bold mt-4">4. <span x-text="$t('addConfig')"></span></p>
+									  <p x-text="$t('copyLinkBelow')"></p>
+									  <button class="btn my-btn my-btn-accent w-100 text-break mb-4 btn-copy-sub-link" type="button">
+										<script type="text/javascript">document.write(linkFull);</script>
+									  </button>
+									  <p x-text="$t('openAndPaste')"></p>
+									  <p class="fs-5 fw-bold mt-4">5. <span x-text="$t('tunWish')"></span></p>
+									  <p x-text="$t('nekorayTun')"></p>
+									  <a href="https://blancvpn.online/ru/help/NekoRay-windows-split-tunneling">
+										<button type="button" class="btn my-btn my-btn-accent w-100 mt-2 mb-4" x-text="$t('nekoraySplit1')"></button>
+									  </a>
+									  <p x-text="$t('nekoraySplit2')"></p>
+									  <p x-text="$t('nekoraySplit3')"></p>
+									  <div class="card p-3 pb-1 border border-0 rounded-4 mb-3">
+										<code>
+										  <p>{"rules": [{"outbound": "proxy","process_name": </p>
+										  <p>[ "Discord.exe", "Update.exe", "chrome.exe", "firefox.exe", "msedge.exe", "opera.exe", "browser.exe", "yandexbrowser.exe", "brave.exe", "vivaldi.exe", "librewolf.exe" ] </p>
+										  <p>}]}</p>
+										</code>
+									  </div>
+									  <p x-text="$t('nekoraySplit4')"></p>
+									  <p x-text="$t('nekoraySplit5')"></p>
+									  <p class="fs-5 fw-bold mt-4">6. <span x-text="$t('doRun')"></span></p>
+									  <p x-text="$t('nekorayRun1')"></p>
+									  <p x-text="$t('nekorayRun2')"></p>
+									  <p x-text="$t('nekorayRun3')"></p>
+									  <div class="my-warning">
+										<p x-text="$t('troubleWin1')"></p>
+										<p x-text="$t('troubleWin2')"></p>
+									  </div>
+									</div>
+								  </div>
+								</div>
+  
+								<hr class="m-0">
+  
+								<!-- v2rayN (без изменений) -->
+								<div class="accordion-item">
+								  <h2 class="accordion-header">
+									<button class="accordion-button collapsed fs-5 fw-bold" type="button"
+											data-bs-toggle="collapse"
+											data-bs-target="#collapseOsWindowsV2rayN"
+											aria-expanded="false"
+											aria-controls="collapseOsWindowsV2rayN">
+									  <svg class="my-icon-small"><use href="#v2rayng"></use></svg>
+									  <span class="d-block w-100 text-center">v2rayN</span>
+									</button>
+								  </h2>
+								  <div id="collapseOsWindowsV2rayN" class="accordion-collapse collapse" data-bs-parent="#accordionOsWindowsAltList">
+									<div class="container pb-4">
+									  <p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
+									  <p x-text="$t('getAppDescription')"></p>
+									  <a href="https://github.com/2dust/v2rayN/releases/download/7.4.2/v2rayN-windows-64-SelfContained-With-Core.7z">
+										<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
+									  </a>
+									  <p class="fs-5 fw-bold mt-4">2. <span x-text="$t('unpack')"></span></p>
+									  <p x-text="$t('anyPlace')"></p>
+									  <p class="fs-5 fw-bold mt-4">3. <span x-text="$t('runFile')"></span> v2rayN.exe</p>
+									  <p x-text="$t('betterAdmin')"></p>
+									  <p class="fs-5 fw-bold mt-4">4. <span x-text="$t('addConfig')"></span></p>
+									  <p x-text="$t('copyLinkBelow')"></p>
+									  <button class="btn my-btn my-btn-accent w-100 text-break mb-4 btn-copy-sub-link" type="button">
+										<script type="text/javascript">document.write(linkFull);</script>
+									  </button>
+									  <p x-text="$t('openAndPaste')"></p>
+									  <p class="fs-5 fw-bold mt-4">5. <span x-text="$t('doUpdate')"></span></p>
+									  <p x-text="$t('v2rayNupdateSub')"></p>
+									  <p class="fs-5 fw-bold mt-4">6. <span x-text="$t('tunWish')"></span></p>
+									  <p x-text="$t('v2rayNtun1')"></p>
+									  <p x-text="$t('v2rayNtun2')"></p>
+									  <p x-text="$t('v2rayNtun3')"></p>
+									  <p class="fs-5 fw-bold mt-4">7. <span x-text="$t('doRun')"></span></p>
+									  <p x-text="$t('v2rayNrun1')"></p>
+									  <p x-text="$t('v2rayNrun2')"></p>
+									  <a href="https://habr.com/en/articles/853796/">
+										<button type="button" class="btn my-btn my-btn-accent w-100 mt-2 mb-4" x-text="$t('v2rayNabout')"></button>
+									  </a>
+									  <div class="my-warning">
+										<p x-text="$t('troubleWin1')"></p>
+										<p x-text="$t('troubleWin2')"></p>
+									  </div>
+									</div>
+								  </div>
+								</div>
+  
+								<hr class="m-0">
+  
+								<!-- InvisibleMan (без изменений) -->
+								<div class="accordion-item">
+								  <h2 class="accordion-header">
+									<button class="accordion-button collapsed fs-5 fw-bold" type="button"
+											data-bs-toggle="collapse"
+											data-bs-target="#collapseOsWindowsInvisibleman"
+											aria-expanded="false"
+											aria-controls="collapseOsWindowsInvisibleman">
+									  <svg class="my-icon"><use href="#invisibleman"></use></svg>
+									  <span class="d-block w-100 text-center">InvisibleMan</span>
+									</button>
+								  </h2>
+								  <div id="collapseOsWindowsInvisibleman" class="accordion-collapse collapse" data-bs-parent="#accordionOsWindowsAltList">
+									<div class="container pb-4">
+									  <p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
+									  <p x-text="$t('getAppDescription')"></p>
+									  <a href="https://github.com/InvisibleManVPN/InvisibleMan-XRayClient/releases/latest/download/InvisibleManXRay-x64.zip">
+										<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
+									  </a>
+									  <p class="fs-5 fw-bold mt-4">2. <span x-text="$t('unpack')"></span></p>
+									  <p x-text="$t('anyPlace')"></p>
+									  <p class="fs-5 fw-bold mt-4">3. <span x-text="$t('runFile')"></span> Invisible Man XRay.exe</p>
+									  <p x-text="$t('betterAdmin')"></p>
+									  <p class="fs-5 fw-bold mt-4">4. <span x-text="$t('addConfig')"></span></p>
+									  <p x-text="$t('addConfigDescription')"></p>
+									  <a id="href-windows-invisibleman">
+										<button type="button" class="btn my-btn my-btn-accent w-100 mb-4" x-text="$t('addConfigApp')"></button>
+									  </a>
+									  <p x-text="$t('invManAddConf1')"></p>
+									  <p x-text="$t('invManAddConf2')"></p>
+									  <p class="fs-5 fw-bold mt-4">5. <span x-text="$t('doRun')"></span></p>
+									  <p x-text="$t('invManRun')"></p>
+									  <p class="fs-5 fw-bold mt-4">6. <span x-text="$t('tunWish')"></span></p>
+									  <p x-text="$t('invManTun')"></p>
+									  <div class="my-warning">
+										<p x-text="$t('troubleWin1')"></p>
+										<p x-text="$t('troubleWin2')"></p>
+									  </div>
+									</div>
+								  </div>
+								</div>
+  
+								<hr class="m-0">
+  
+								<!-- Clash Verge Rev (без изменений) -->
+								<div class="accordion-item">
+								  <h2 class="accordion-header">
+									<button class="accordion-button collapsed fs-5 fw-bold" type="button"
+											data-bs-toggle="collapse"
+											data-bs-target="#collapseOsWindowsClashVergeRev"
+											aria-expanded="false"
+											aria-controls="collapseOsWindowsClashVergeRev">
+									  <svg class="my-icon-small"><use href="#clash-verge-rev"></use></svg>
+									  <span class="d-block w-100 text-center">Clash Verge Rev</span>
+									</button>
+								  </h2>
+								  <div id="collapseOsWindowsClashVergeRev" class="accordion-collapse collapse" data-bs-parent="#accordionOsWindowsAltList">
+									<div class="container pb-4">
+									  <p class="fs-5 fw-bold">1. <span x-text="$t('getApp')"></span></p>
+									  <p x-text="$t('getAppDescription')"></p>
+									  <a id="clashvergerev" href="#">
+										<button type="button" class="btn my-btn my-btn-accent w-100" x-text="$t('downloadApp')"></button>
+									  </a>
+									  <p class="fs-5 fw-bold mt-4">2. <span x-text="$t('doRun')"></span> Clash Verge Rev</p>
+									  <p x-text="$t('betterAdmin')"></p>
+									  <p class="fs-5 fw-bold mt-4">3. <span x-text="$t('addConfig')"></span></p>
+									  <p x-text="$t('addConfigDescription')"></p>
+									  <a id="href-windows-clashvergerev">
+										<button type="button" class="btn my-btn my-btn-accent w-100 mb-4" x-text="$t('addConfigApp')"></button>
+									  </a>
+									  <p x-text="$t('ClashVergeRevAddConf1')"></p>
+									  <p x-text="$t('ClashVergeRevOnSysProxy')"></p>
+									  <p class="fs-5 fw-bold mt-4">4. <span x-text="$t('tunWish')"></span></p>
+									  <p x-text="$t('ClashVergeRevTun')"></p>
+									  <p x-text="$t('ClashVergeRevOffSysProxy')"></p>
+									  <div class="my-warning">
+										<p x-text="$t('troubleWin1')"></p>
+										<p x-text="$t('troubleWin2')"></p>
+									  </div>
+									</div>
+								  </div>
+								</div>
+  
+							  </div> <!-- /accordionOsWindowsAltList -->
+							</div>   <!-- /accordionOsWindowsAlt -->
+						  </div>     <!-- /accordion-item: другие приложения -->
+  
 						</div>
-					</div>
-				</div>
+					  </div>
+				  </div>
 				<div class="accordion-item rounded-4 px-3 mb-2">
 					<h2 class="accordion-header">
 						<button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLinux" aria-expanded="false" aria-controls="collapseLinux">
@@ -1596,6 +1683,12 @@
 					linux2: 'You need to paste the following link as the "Subscription link":',
 					copyLinkBelow: 'Copy the following link:',
 					
+					// v2RayTun (новые)
+					v2raytunHint1: "If the import by click does not work, copy the URL above and add it via Add → Subscription (URL), then run Update/Sync.",
+					v2raytunHint2: "After import, choose a server and click Connect.",
+					v2raytunTun1: "Enable TUN/VPN mode in settings so that all traffic goes through the app.",
+					v2raytunTun2: "If some apps bypass the tunnel, check per-app routing and Windows Firewall rules.",					
+
 					//Footer
 					faq: 'FAQ:',
 					faq1: '1. Subscription — a link in a special format that the application uses to download the data necessary for connection from the server',
@@ -1714,6 +1807,12 @@
 					linuxExampleV2rayA: 'Например v2rayA',
 					linux2: 'В качестве "Subscription link" нужно вставить следующую ссылку:',
 					copyLinkBelow: 'Скопируйте следующую ссылку:',
+					
+					// v2RayTun (новые)
+					v2raytunHint1: "Если импорт по клику не сработал — скопируйте ссылку выше и добавьте через «Add → Subscription (URL)», затем выполните Update/Sync.",
+					v2raytunHint2: "После импорта выберите сервер и нажмите Connect.",
+					v2raytunTun1: "Включите режим TUN/VPN в настройках, чтобы весь трафик шёл через приложение.",
+					v2raytunTun2: "Если какие-то приложения обходят туннель, проверьте маршрутизацию по приложениям и правила брандмауэра Windows.",					
 					
 					//Footer
 					faq: 'Ответы на вопросы:',
