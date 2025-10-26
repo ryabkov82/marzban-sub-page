@@ -2077,9 +2077,10 @@
 			}
 			
 			function getPreferredLanguage() {
-				const lang = localStorage.getItem('language') || (navigator.language || navigator.userLanguage).slice(0, 2);
+				//const lang = localStorage.getItem('language') || (navigator.language || navigator.userLanguage).slice(0, 2);
+				const lang = localStorage.getItem('language') || 'ru';
 				const supportedLanguages = ['ru', 'en', 'zh', 'fa'];
-				return supportedLanguages.includes(lang) ? lang : 'en';
+				return supportedLanguages.includes(lang) ? lang : 'ru';
 			}
 			
 			function changeImages(lang) {
