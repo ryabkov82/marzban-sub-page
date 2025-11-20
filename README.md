@@ -1,90 +1,212 @@
-# 🌐 Marzban Subscription Page
+🌐 Available languages: [English](README.md) | [Русский](README.ru.md)
 
-**Marzban-sub-page** — это лёгкая статическая страница подписки для пользователей VPN-панели [Marzban](https://github.com/Gozargah/Marzban).  
-Страница формирует персонализированные ссылки и инструкции по подключению для всех популярных клиентов (Windows, Android, iOS, macOS, Linux).
+# 🌐 Marzban Custom Subscription Page
+A fully custom HTML subscription page for the Marzban panel  
+(replaces the user-facing `/sub/<token>` page).
 
----
+This project provides a **single standalone HTML file** containing all CSS, JavaScript, SVG icons, translations, and UI logic.  
+Marzban automatically loads custom templates from the directory specified in:
 
-## 🚀 Основные возможности
-
-- 🔗 Автоматическая генерация **subscription URL** на основе `base` и `uuid`
-- 📱 Интерактивные инструкции для **всех ОС** (Windows, Android, iOS, macOS, Linux)
-- 🧭 Поддержка популярных клиентов:
-  - **v2RayTun** (Windows / Android) — рекомендованное приложение
-  - Hiddify, SingBox, Happ, v2rayN, NekoRay, InvisibleMan, Clash Verge и др.
-- 🌍 Многоязычность через встроенные словари (`ru`, `en`)
-- 🧩 Поддержка deeplink-импорта (`v2raytun://import/...`)
-- 🎨 Лёгкий Bootstrap-интерфейс + Alpine.js без серверной логики
-- 🔒 Готово к размещению на любом HTTPS-хостинге (например, GitHub Pages / Nginx)
+```
+CUSTOM_TEMPLATES_DIRECTORY="/var/lib/marzban/templates/"
+```
 
 ---
 
-## 📂 Структура проекта
+# 🚀 Features
+
+- 🔄 Complete replacement of the default Marzban subscription page  
+- 🔗 Automatic integration of Jinja variables: `subscription_url`, `user`, `inbounds`, `xray_config_base64`  
+- 📱 One‑click client import (V2RayTun, Sing-box, Hiddify, etc.)  
+- 🌍 Multilingual (EN/RU) — translations embedded in the file  
+- 🎨 Modern Bootstrap‑based UI with inline CSS  
+- 🧩 Embedded SVG icons  
+- ⚙️ No external dependencies — everything lives inside one HTML file  
+
+---
+
+# 📁 Project Structure
 
 ```
 marzban-sub-page/
-├── index.html                # Основная страница подписки
-├── assets/
-│   ├── css/                  # Стили Bootstrap / кастомные
-│   ├── img/                  # Иконки и логотипы приложений
-│   └── js/                   # Скрипты (deeplink, генерация ссылок)
-└── README.md                 # Этот файл
+└── template_subscription_index.html   # the single combined CSS+JS+SVG template
 ```
 
 ---
 
-## ⚙️ Локальный просмотр
+# 🔌 Installation & Integration with Marzban
 
-1. Клонируйте репозиторий:
-   ```bash
-   git clone https://github.com/ryabkov82/marzban-sub-page.git
-   cd marzban-sub-page
-   ```
+## 1. Ensure custom templates are enabled in `.env`
 
-2. Откройте файл `index.html` напрямую в браузере  
-   *(можно просто перетащить в окно Chrome / Edge / Firefox)*  
-   или поднимите локальный сервер:
-   ```bash
-   python3 -m http.server 8080
-   ```
+In `/opt/marzban/.env` you must have:
 
-3. Откройте страницу в браузере:
-   ```
-   http://localhost:8080
-   ```
+```
+CUSTOM_TEMPLATES_DIRECTORY="/var/lib/marzban/templates/"
+```
+
+This makes Marzban read templates from that directory.
 
 ---
 
-## 🧩 Кастомизация
+## 2. Create the directory structure for the template
 
-### 🔸 Переводы
-Все тексты определены в объекте `MESSAGES` внизу `index.html`.  
-Добавьте новые ключи или языки (например, `fa`, `zh`) по образцу `ru` / `en`.
-
-### 🔸 Deeplink-ссылки
-В секции JS (в конце файла) вызываются функции `setupLink("href-...")`,  
-которые формируют индивидуальные URL для импорта подписки в приложении.  
-Добавьте новые по аналогии, если используете другие клиенты.
-
-### 🔸 Иконки
-SVG-спрайт хранится внутри `index.html`.  
-Для нестандартных клиентов можно использовать PNG-иконки  
-в каталоге `assets/img` с классом `.my-icon-small-img`.
+```bash
+sudo mkdir -p /var/lib/marzban/templates/subscription/
+```
 
 ---
 
-## 🖼️ Пример страницы
+## 3. Copy the template into place
 
-![Preview](assets/img/screenshot.png)
+```bash
+sudo cp template_subscription_index.html      /var/lib/marzban/templates/subscription/index.html
+```
 
----
-
-## 📄 Лицензия
-
-Проект распространяется под лицензией **MIT**.  
-Свободно используйте и модифицируйте под свои нужды.
+Marzban will automatically start using your custom template.
 
 ---
 
-**Автор:** [Sergey Ryabkov](https://github.com/ryabkov82)  
-**Проект:** [VPN for Friends](https://t.me/vpn_for_myfriends_bot)
+## 4. Restart Marzban
+
+```bash
+docker compose down
+docker compose up -d
+```
+
+---
+
+# 📌 URL where the page is available
+
+Users access the subscription page via the URL generated by Marzban:
+
+```
+https://<domain>/sub/<base64-token>
+```
+
+Example:
+
+```
+https://marzban-s2.vpn-for-friends.com:4443/sub/dXNfMjI5LDE3NjM2...
+```
+
+This is the **correct and only** public route for subscription pages.
+
+---
+
+# 🔄 Alternative legacy installation via volume (not recommended)
+
+If you prefer overriding the internal container file:
+
+```yaml
+services:
+  marzban:
+    volumes:
+      - /opt/marzban/template_subscription_index.html:/code/app/templates/subscription/index.html
+```
+
+But when using `CUSTOM_TEMPLATES_DIRECTORY`, **this is unnecessary**.
+
+---
+
+# 🧬 Supported Jinja Variables
+
+| Variable | Description |
+|---------|-------------|
+| `subscription_url` | Subscription URL (`/sub/<token>`) |
+| `panel_url` | Panel base URL |
+| `user` | User object |
+| `user.uuid` | UUID |
+| `user.username` | Username |
+| `user.expire_date` | Expiration date |
+| `user.data_limit` | Data cap |
+| `user.data_limit_reset_strategy` | Reset strategy |
+| `user.sub_status` | Status |
+| `user.on_hold_expire_duration` | Freeze duration |
+| `inbounds` | List of inbound nodes |
+| `xray_config_base64` | Base64‑encoded config |
+
+---
+
+# 🧩 Template Usage Examples
+
+### Subscription link
+```html
+<a href="{{ subscription_url }}" class="btn btn-primary">Download subscription</a>
+```
+
+### UUID output
+```html
+<p>Your UUID: {{ user.uuid }}</p>
+```
+
+### Iterating through inbounds
+```html
+{% for ib in inbounds %}
+  <li>{{ ib.remark }} — {{ ib.address }}:{{ ib.port }}</li>
+{% endfor %}
+```
+
+---
+
+# 🎨 Customization
+
+Everything is contained inside one HTML file. You can modify:
+
+## 🔸 Translations (MESSAGES)
+
+Found inside `<script>`:
+
+```js
+const MESSAGES = { en: {...}, ru: {...} }
+```
+
+You may:
+
+- modify text  
+- add languages (`fa`, `zh`, `tr`, etc.)  
+- change the default language  
+
+---
+
+## 🔸 Deeplink generation
+
+Functions like:
+
+```js
+setupLink("href-v2raytun");
+setupLink("href-singbox");
+```
+
+generate client import links using `{{ subscription_url }}`.
+
+---
+
+## 🔸 Styles
+
+CSS is stored inside a `<style>` block. You can customize:
+
+- color theme  
+- layout  
+- buttons/cards  
+- logos  
+- spacing and typography  
+
+---
+
+## 🔸 Icons
+
+SVG sprite is fully embedded in the HTML file.  
+Add new icons by inserting new `<symbol>` elements.
+
+---
+
+# 🤝 Contributing
+
+Pull requests are welcome!
+
+---
+
+# 📜 License
+MIT License  
+Author: Sergey Ryabkov  
+Project: VPN for Friends
