@@ -1,4 +1,12 @@
-🌐 Available languages: [English](README.md) | [Русский](README.ru.md)
+![Template](https://img.shields.io/badge/Marzban-Custom%20Subscription%20Page-0A84FF?style=flat-square&logo=vercel&logoColor=white)
+![HTML One File](https://img.shields.io/badge/HTML-One--File-orange?style=flat-square&logo=html5&logoColor=white)
+![Languages](https://img.shields.io/badge/Languages-EN%20%7C%20RU-blueviolet?style=flat-square)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![VPN for Friends](https://img.shields.io/badge/VPN_for_Friends-Subscription_Page-2AAEE8?style=flat-square&logo=shield&logoColor=white)
+
+
+**English** | [Русская версия](README.md)
 
 # 🌐 Marzban Custom Subscription Page
 A fully custom HTML subscription page for the Marzban panel  
